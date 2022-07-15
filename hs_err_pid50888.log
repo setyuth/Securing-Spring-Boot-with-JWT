@@ -1,0 +1,220 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_IN_PAGE_ERROR (0xc0000006) at pc=0x00007ffa50471699, pid=50888, tid=39384
+#
+# JRE version:  (13.0+33) (build )
+# Java VM: OpenJDK 64-Bit Server VM (13+33, mixed mode, aot, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# Problematic frame:
+# C  [VCRUNTIME140.dll+0x1699]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51095 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=springbootjwt -Dfile.encoding=UTF-8 com.springbootjwp.springbootjwt.SpringbootjwtApplication --spring.output.ansi.enabled=always
+
+Host: Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz, 4 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1741)
+Time: Thu Jul 14 14:00:03 2022 SE Asia Standard Time elapsed time: 0 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread is native thread
+
+Stack: [0x000000bd2d200000,0x000000bd2d300000],  sp=0x000000bd2d2ff030,  free space=1020k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [VCRUNTIME140.dll+0x1699]
+V  [jvm.dll+0x6514b1]
+V  [jvm.dll+0x6502a7]
+V  [jvm.dll+0x64fe4e]
+V  [jvm.dll+0x3638a2]
+V  [jvm.dll+0x732bd3]
+V  [jvm.dll+0x3ce2cf]
+V  [jvm.dll+0x3d05f1]
+C  [jli.dll+0x51ff]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+siginfo: EXCEPTION_IN_PAGE_ERROR (0xc0000006), writing address 0x000001c59c7f0000
+
+
+Registers:
+RAX=0x0000000000000000, RBX=0x000001c59c7f0000, RCX=0x0000000000010000, RDX=0x0000000000000000
+RSP=0x000000bd2d2ff030, RBP=0x000001c59f045d70, RSI=0x000001c59c873cb0, RDI=0x000001c59c7f0000
+R8 =0x0000000000010000, R9 =0x0000000000000000, R10=0xdeadbeefdeadbeef, R11=0x000001c59c7f0000
+R12=0x0000000000000000, R13=0x00007ff9fc66c240, R14=0x000001c59f031190, R15=0x0000000000010000
+RIP=0x00007ffa50471699, EFLAGS=0x0000000000010203
+
+Top of Stack: (sp=0x000000bd2d2ff030)
+0x000000bd2d2ff030:   0000000000000000 00007ff9fc3e14b1
+0x000000bd2d2ff040:   000001c59f045d70 000001c500000000
+0x000000bd2d2ff050:   000001c59c873cb0 0000000000000140
+0x000000bd2d2ff060:   0000000000010000 000000bd2d2ff084
+0x000000bd2d2ff070:   000000bd2d2ff310 00007ffa00000104
+0x000000bd2d2ff080:   03e706ff00000101 00007ffa00000103
+0x000000bd2d2ff090:   000001c59f045d75 00000000000000ff
+0x000000bd2d2ff0a0:   000000000000000d 0000000000000000
+0x000000bd2d2ff0b0:   000000000000000c 0000000000000000
+0x000000bd2d2ff0c0:   0000000000000000 0000000000000030
+0x000000bd2d2ff0d0:   0000000000001000 000001c59c850000
+0x000000bd2d2ff0e0:   0000000000001000 00007ffa786cf47e
+0x000000bd2d2ff0f0:   000001c5005c3a43 00007ffa786ba46c
+0x000000bd2d2ff100:   0000000000004929 00007ffa78819540
+0x000000bd2d2ff110:   e360d12e00000000 00000000000003ff
+0x000000bd2d2ff120:   f24ff58000000000 00007ffa786ba36f 
+
+Instructions: (pc=0x00007ffa50471699)
+0x00007ffa50471599:   ff ff 0f 1f 44 00 00 49 03 c8 0f 10 44 11 f0 48
+0x00007ffa504715a9:   83 e9 10 49 83 e8 10 f6 c1 0f 74 17 48 8b c1 48
+0x00007ffa504715b9:   83 e1 f0 0f 10 c8 0f 10 04 11 0f 11 08 4c 8b c1
+0x00007ffa504715c9:   4d 2b c3 4d 8b c8 49 c1 e9 07 74 68 0f 29 01 eb
+0x00007ffa504715d9:   0d 66 0f 1f 44 00 00 0f 29 41 10 0f 29 09 0f 10
+0x00007ffa504715e9:   44 11 f0 0f 10 4c 11 e0 48 81 e9 80 00 00 00 0f
+0x00007ffa504715f9:   29 41 70 0f 29 49 60 0f 10 44 11 50 0f 10 4c 11
+0x00007ffa50471609:   40 49 ff c9 0f 29 41 50 0f 29 49 40 0f 10 44 11
+0x00007ffa50471619:   30 0f 10 4c 11 20 0f 29 41 30 0f 29 49 20 0f 10
+0x00007ffa50471629:   44 11 10 0f 10 0c 11 75 ae 0f 29 41 10 49 83 e0
+0x00007ffa50471639:   7f 0f 28 c1 4d 8b c8 49 c1 e9 04 74 1a 66 66 0f
+0x00007ffa50471649:   1f 84 00 00 00 00 00 0f 11 01 48 83 e9 10 0f 10
+0x00007ffa50471659:   04 11 49 ff c9 75 f0 49 83 e0 0f 74 08 41 0f 10
+0x00007ffa50471669:   0a 41 0f 11 0b 0f 11 01 49 8b c3 c3 cc cc cc cc
+0x00007ffa50471679:   cc cc cc cc cc cc cc cc cc cc cc cc cc 66 66 0f
+0x00007ffa50471689:   1f 84 00 00 00 00 00 57 8b c2 48 8b f9 49 8b c8
+0x00007ffa50471699:   f3 aa 49 8b c3 5f c3 cc cc cc cc cc cc 66 66 0f
+0x00007ffa504716a9:   1f 84 00 00 00 00 00 4c 8b d9 0f b6 d2 49 b9 01
+0x00007ffa504716b9:   01 01 01 01 01 01 01 4c 0f af ca 49 83 f8 10 0f
+0x00007ffa504716c9:   86 f2 00 00 00 66 49 0f 6e c1 66 0f 60 c0 49 81
+0x00007ffa504716d9:   f8 80 00 00 00 77 10 0f ba 25 c4 fc 00 00 02 0f
+0x00007ffa504716e9:   83 62 00 00 00 eb a0 0f ba 25 b4 fc 00 00 01 72
+0x00007ffa504716f9:   96 0f 11 01 4c 03 c1 48 83 c1 10 48 83 e1 f0 4c
+0x00007ffa50471709:   2b c1 4d 8b c8 49 c1 e9 07 74 3c 66 66 66 66 0f
+0x00007ffa50471719:   1f 84 00 00 00 00 00 0f 29 01 0f 29 41 10 48 81
+0x00007ffa50471729:   c1 80 00 00 00 0f 29 41 a0 0f 29 41 b0 49 ff c9
+0x00007ffa50471739:   0f 29 41 c0 0f 29 41 d0 0f 29 41 e0 66 0f 29 41
+0x00007ffa50471749:   f0 75 d4 49 83 e0 7f 4d 8b c8 49 c1 e9 04 74 13
+0x00007ffa50471759:   0f 1f 80 00 00 00 00 0f 11 01 48 83 c1 10 49 ff
+0x00007ffa50471769:   c9 75 f4 49 83 e0 0f 74 06 42 0f 11 44 01 f0 49
+0x00007ffa50471779:   8b c3 c3 ee 17 00 00 eb 17 00 00 17 18 00 00 e7
+0x00007ffa50471789:   17 00 00 f4 17 00 00 04 18 00 00 14 18 00 00 e4 
+
+
+
+---------------  P R O C E S S  ---------------
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+
+[error occurred during error reporting (printing compressed oops mode), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff9fbfb3d77]
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7f0ac0000 - 0x00007ff7f0acd000 	C:\Program Files\Java\jdk-13\bin\javaw.exe
+0x000001c59c950000 - 0x000001c59cb47000 	C:\windows\SYSTEM32\ntd1l.dll
+0x000001c59cb50000 - 0x000001c59cc0d000 	C:\windows\System32\kern3l32.dll
+0x00007ffa786b0000 - 0x00007ffa788a7000 	C:\windows\SYSTEM32\ntdll.dll
+0x00007ffa77970000 - 0x00007ffa77a2d000 	C:\windows\System32\KERNEL32.DLL
+0x00007ffa75ea0000 - 0x00007ffa7616d000 	C:\windows\System32\KERNELBASE.dll
+0x00007ffa75a80000 - 0x00007ffa75c8d000 	C:\Program Files\SentinelOne\Sentinel Agent 21.6.5.1072\InProcessClient64.dll
+0x00007ffa76d80000 - 0x00007ffa76e2e000 	C:\windows\System32\ADVAPI32.dll
+0x00007ffa77c90000 - 0x00007ffa77d2e000 	C:\windows\System32\msvcrt.dll
+0x00007ffa770e0000 - 0x00007ffa7717c000 	C:\windows\System32\sechost.dll
+0x00007ffa77330000 - 0x00007ffa77455000 	C:\windows\System32\RPCRT4.dll
+0x00007ffa765a0000 - 0x00007ffa766a0000 	C:\windows\System32\ucrtbase.dll
+0x00007ffa55430000 - 0x00007ffa55448000 	C:\Program Files\Java\jdk-13\bin\jli.dll
+0x00007ffa50470000 - 0x00007ffa50485000 	C:\Program Files\Java\jdk-13\bin\VCRUNTIME140.dll
+0x00007ffa76e30000 - 0x00007ffa76fd0000 	C:\windows\System32\USER32.dll
+0x00007ffa75e70000 - 0x00007ffa75e92000 	C:\windows\System32\win32u.dll
+0x00007ffa77c60000 - 0x00007ffa77c8a000 	C:\windows\System32\GDI32.dll
+0x00007ffa76170000 - 0x00007ffa7627b000 	C:\windows\System32\gdi32full.dll
+0x00007ffa75dd0000 - 0x00007ffa75e6d000 	C:\windows\System32\msvcp_win.dll
+0x00007ffa61b60000 - 0x00007ffa61dfa000 	C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffa75910000 - 0x00007ffa7591a000 	C:\windows\SYSTEM32\VERSION.dll
+0x00007ffa76fd0000 - 0x00007ffa77000000 	C:\windows\System32\IMM32.DLL
+0x00007ffa0e980000 - 0x00007ffa0ea1b000 	C:\Program Files\Java\jdk-13\bin\msvcp140.dll
+0x00007ff9fbd90000 - 0x00007ff9fc8f6000 	C:\Program Files\Java\jdk-13\bin\server\jvm.dll
+0x00007ffa77a40000 - 0x00007ffa77a48000 	C:\windows\System32\PSAPI.DLL
+0x00007ffa61360000 - 0x00007ffa61369000 	C:\windows\SYSTEM32\WSOCK32.dll
+0x00007ffa775a0000 - 0x00007ffa7760b000 	C:\windows\System32\WS2_32.dll
+0x00007ffa628e0000 - 0x00007ffa62907000 	C:\windows\SYSTEM32\WINMM.dll
+0x00007ffa74400000 - 0x00007ffa74412000 	C:\windows\SYSTEM32\kernel.appcore.dll
+0x00007ffa6df80000 - 0x00007ffa6df90000 	C:\Program Files\Java\jdk-13\bin\verify.dll
+0x00007ffa74110000 - 0x00007ffa742f4000 	C:\windows\SYSTEM32\DBGHELP.DLL
+0x00007ffa5ceb0000 - 0x00007ffa5cedc000 	C:\windows\SYSTEM32\dbgcore.DLL
+0x00007ffa763e0000 - 0x00007ffa76462000 	C:\windows\System32\bcryptPrimitives.dll
+0x00007ffa4b530000 - 0x00007ffa4b556000 	C:\Program Files\Java\jdk-13\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-13\bin;C:\windows\SYSTEM32;C:\Program Files\SentinelOne\Sentinel Agent 21.6.5.1072;C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Program Files\Java\jdk-13\bin\server
+
+VM Arguments:
+jvm_args: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51095 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=springbootjwt -Dfile.encoding=UTF-8 
+java_command: com.springbootjwp.springbootjwt.SpringbootjwtApplication --spring.output.ansi.enabled=always
+java_class_path (initial): D:\SPRING-LEARNING\springbootjwp\springbootjwt\target\classes;C:\Users\setyuth\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.7.1\spring-boot-starter-data-jpa-2.7.1.jar;C:\Users\setyuth\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.7.1\spring-boot-starter-aop-2.7.1.jar;C:\Users\setyuth\.m2\repository\org\aspectj\aspectjweaver\1.9.7\aspectjweaver-1.9.7.jar;C:\Users\setyuth\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.7.1\spring-boot-starter-jdbc-2.7.1.jar;C:\Users\setyuth\.m2\repository\com\zaxxer\HikariCP\4.0.3\HikariCP-4.0.3.jar;C:\Users\setyuth\.m2\repository\org\springframework\spring-jdbc\5.3.21\spring-jdbc-5.3.21.jar;C:\Users\setyuth\.m2\repository\jakarta\transaction\jakarta.transaction-api\1.3.3\jakarta.transaction-api-1.3.3.jar;C:\Users\setyuth\.m2\repository\jakarta\persistence\jakarta.persistence-api\2.2.3\jakarta.persistence-api-2.2.3.jar;C:\Users\setyuth\.m2\repository\org\hibernate\hibernate-core\5.6.9.Final\hibernate-core-5.6.9.Final.jar;C:\Users\setyuth\.m2\repository\org\jboss\logging\jboss-logging\3.4.3.Final\jboss-logging-3.4.3.Final.jar;C:\Users\setyuth\.m2\repository\net\bytebuddy\byte-buddy\1.12.11\byte-buddy-1.12.11.jar;C:\Users\setyuth\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\setyuth\.m2\repository\org\jboss\jandex\2.4.2.Final\jandex-2.4.2.Final.jar;C:\Users\setyuth\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\setyuth\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\setyuth\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.6\jaxb-runtime-2.3.6.jar;C:\Users\setyuth\.m2\repository\org\glassfish\jaxb\txw2\2.3.6\txw2-2.3.6.jar;C:\Users\setyuth\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.12\istack-commons-runtime-3.0.12.jar;C:\Users\setyuth\.m2\repository\com\sun\activation\jakarta.activation\1.2.2\jakarta.activat
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 266722112                                 {product} {ergonomic}
+     bool ManagementServer                         = true                                      {product} {command line}
+   size_t MaxHeapSize                              = 4267553792                                {product} {ergonomic}
+   size_t MinHeapSize                              = 6815736                                   {product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-13
+PATH=D:/sts-4.15.1.RELEASE//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.3.v20220515-1416/jre/bin/server;D:/sts-4.15.1.RELEASE//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.3.v20220515-1416/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Java\jdk-13\bin;C:\Program Files\Git\cmd;C:\Program Files\apache-maven-3.6.3\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\nodejs\;%JAVA_13_HOME%\bin;C:\Program Files (x86)\NetSarang\Xshell 7\;C:\Program Files (x86)\NetSarang\Xftp 7\;C:\Program Files\Java\jdk-14\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\setyuth\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-13\bin;C:\Program Files\apache-maven-3.6.3\bin;C:\Users\setyuth\AppData\Roaming\npm;%JAVA_13_HOME%\bin;C:\Program Files\Java\jdk-14\bin;D:\sts-4.15.1.RELEASE;
+USERNAME=SETYUTH
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 78 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.1741)
+
+CPU:total 4 (initial active 4) 
+
+Memory: 4k page, system-wide physical 16279M (5622M free)
+TotalPageFile size 18533M (AvailPageFile size 4275M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 6M, peak: 6M
+
+vm_info: OpenJDK 64-Bit Server VM (13+33) for windows-amd64 JRE (13+33), built on Aug  9 2019 11:21:18 by "mach5one" with unknown MS VC++:1916
+
+END.
