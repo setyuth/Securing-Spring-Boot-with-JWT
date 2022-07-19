@@ -9,8 +9,8 @@ import lombok.ToString;
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class Authorize {
+public class AuthorizeReq {
 
-	private String userName;
+	private String username;
 	private String password;
 }

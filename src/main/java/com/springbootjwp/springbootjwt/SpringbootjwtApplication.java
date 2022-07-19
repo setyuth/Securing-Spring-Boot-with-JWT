@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,7 +20,7 @@ public class SpringbootjwtApplication {
 	@Autowired
 	private UserRepository userRepository;
 	
-	
+	@PostConstruct
 	public void UserInit() {
 		List<User> users = Stream.of(
 					new User(1, "khmerside", "123", "khmerside@mail.com"),

@@ -5,17 +5,26 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+import javax.crypto.SecretKey;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.io.Encoders;
+import io.jsonwebtoken.security.Keys;
 
 @Service
 public class JwtUtilService {
 
-	private String secretKey = "KhmerSide";
+	@Value("${khmerside.app.jwtexpirationms}")
+	private int jwtExpirationMs;
+
+	SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+	String jwtTokenKey = Encoders.BASE64.encode(key.getEncoded());
 	
 	@SuppressWarnings("deprecation")
 	private String createToken(Map<String, Object> claims, String subject) {
@@ -24,8 +33,9 @@ public class JwtUtilService {
 				.setClaims(claims)
 				.setSubject(subject)
 				.setIssuedAt(new Date(System.currentTimeMillis()))
-				.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
-				.signWith(SignatureAlgorithm.HS256, secretKey).compact();
+				//.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
+				.setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
+				.signWith(SignatureAlgorithm.HS256, jwtTokenKey).compact();
 	}
 	
 	public String generateToken(String username) {
@@ -59,7 +69,7 @@ public class JwtUtilService {
 
 	@SuppressWarnings("deprecation")
 	private Claims extractAllClaims(String token) {
-		return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody();
+		return Jwts.parser().setSigningKey(jwtTokenKey).parseClaimsJws(token).getBody();
 	}
 	
 }
